@@ -5,8 +5,7 @@ const db = CyclicDB(process.env.CYCLIC_DB)
 let users = db.collection('users')
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-  let list = await users.list();
-  res.send(list);
+  res.render('index', { title: 'Express' });
 });
 
 router.get('/:key', async function(req, res, next) {
